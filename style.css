@@ -1,0 +1,742 @@
+/* ——— 🔥 RESET BÁSICO 🔥 ——— */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333333;
+    line-height: 1.6;
+    touch-action: manipulation;
+}
+
+img, video {
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+/* ——— 📌 HEADER FIXO 📌 ——— */
+.header-site {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #03571C;
+    z-index: 1000;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    padding: 16px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-site.scrolled {
+    background-color: rgba(3, 87, 28, 0.50);
+    backdrop-filter: blur(8px);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.15rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.brand-logo .icon-church {
+    font-size: 26px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+/* ——— 🖼️ BANNER PRINCIPAL 🖼️ ——— */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 67vh;
+    min-height: 250px;
+    margin-top: 58px;
+    background-image: url('https://raw.githubusercontent.com/PadroeiraSti-Ofc/Par-quia-Santa-In-s/main/IGREJA_DA_MATRIZ_DE_SANTA_IN%C3%8AS_MARANH%C3%83O.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.70);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.btn-hero {
+    display: inline-block;
+    width: 100%;
+    padding: 11px 40px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-gray {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    border: 2px solid transparent;
+    backdrop-filter: blur(4px);
+    animation: tremerComPausa 5s ease-in-out infinite;
+}
+
+.btn-gray:hover, 
+.btn-gray:active {
+    background-color: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    animation: tremerComPausa 5s ease-in-out infinite;
+    animation-delay: 2.5s;
+}
+
+.btn-outline:hover, 
+.btn-outline:active {
+    background-color: #ffffff;
+    color: #03571C;
+    transform: translateY(-2px);
+}
+
+@keyframes tremerComPausa {
+    0%, 90%, 100% { transform: translate(0, 0) rotate(0deg); }
+    92% { transform: translate(-2px, 1px) rotate(-1deg); }
+    94% { transform: translate(2px, -1px) rotate(1deg); }
+    96% { transform: translate(-2px, -1px) rotate(-0.5deg); }
+    98% { transform: translate(2px, 1px) rotate(0.5deg); }
+}
+
+/* ——— 📱 SEÇÃO REDES SOCIAIS ——— */
+.social-section {
+    padding: 40px 16px;
+    background-color: #f8f9fa;
+}
+
+.container-social {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #03571C;
+    text-align: center;
+}
+
+.social-subtitle {
+    font-size: 0.88rem;
+    color: #666666;
+    text-align: center;
+    margin-top: -12px;
+    margin-bottom: 8px;
+}
+
+.social-card {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-header-app {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.profile-avatar {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.avatar-youtube {
+    background: #ff0000;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.profile-handle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.profile-handle h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111111;
+}
+
+.verify-icon {
+    color: #0095f6;
+    font-size: 0.95rem;
+}
+
+.profile-name {
+    font-size: 0.82rem;
+    color: #737373;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 18px 0;
+    padding: 10px 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #111111;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #737373;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: #ffffff;
+}
+
+.btn-youtube {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.btn-social:hover,
+.btn-whatsapp:hover,
+.whatsapp-number-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+}
+
+.clicado {
+    animation: pulsoClique 0.4s ease-in-out forwards;
+    opacity: 0.85 !important;
+    filter: brightness(0.9) !important;
+}
+
+@keyframes pulsoClique {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.93); }
+    100% { transform: scale(0.97); }
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+    margin: 30px auto;
+    width: 85%;
+    max-width: 480px;
+}
+
+/* ——— 💚 SEÇÃO WHATSAPP ——— */
+.whatsapp-section {
+    padding: 10px 16px 40px 16px;
+    background-color: #f8f9fa;
+}
+
+.container-whatsapp {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #03571C;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 0.88rem;
+    color: #666666;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 8px;
+}
+
+.whatsapp-card {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.whatsapp-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.whatsapp-icon-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #25d366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-icon-circle i {
+    font-size: 28px;
+    line-height: 0;
+    display: inline-block;
+}
+
+.whatsapp-status-info h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111111;
+}
+
+.whatsapp-status-info p {
+    font-size: 0.8rem;
+    color: #555555;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.status-dot.online {
+    background-color: #25d366;
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    animation: pulse-green 1.8s infinite;
+}
+
+.status-dot.offline {
+    background-color: #ff3b30;
+    box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7);
+    animation: pulse-red 1.8s infinite;
+}
+
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(255, 59, 48, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+}
+
+.whatsapp-desc {
+    font-size: 0.88rem;
+    color: #555555;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.whatsapp-number-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #03571C;
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: #f0f7f2;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 13px;
+    border-radius: 10px;
+    background-color: #25d366;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+    .container-social, .container-whatsapp {
+        max-width: 480px;
+    }
+    .social-title, .section-title {
+        font-size: 1.7rem;
+    }
+    .btn-social {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    .btn-whatsapp {
+        padding: 14px;
+        font-size: 1.05rem;
+    }
+}
+
+/* ——— 🌙 SEÇÃO ESCURA DE HORÁRIOS & CONFISSÕES 🌙 ——— */
+.schedule-section {
+    background-color: #1e232a;
+    padding: 50px 16px 60px 16px;
+    color: #ffffff;
+}
+
+.container-schedule {
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.schedule-main-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+.schedule-main-subtitle {
+    font-size: 0.88rem;
+    color: #a0aec0;
+    text-align: center;
+    margin-top: -16px;
+    margin-bottom: 8px;
+}
+
+.schedule-card {
+    width: 100%;
+    background: #262c36;
+    border-radius: 18px;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    scroll-margin-top: 80px;
+}
+
+.schedule-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 16px;
+}
+
+.schedule-icon-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(3, 87, 28, 0.25);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    color: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.badge-gold {
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+}
+
+.schedule-card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.schedule-card-header p {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    gap: 12px;
+}
+
+.schedule-item-domingo {
+    align-items: center;
+}
+
+.day-label {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #e2e8f0;
+    white-space: nowrap;
+}
+
+.times-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+/* GRADE ORGANIZADA DE DOMINGO (2 POR LINHA, TOTALMENTE ALINHADOS) */
+.sunday-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+.sunday-grid .time-tag {
+    text-align: center;
+    justify-content: center;
+}
+
+.time-tag {
+    background: #181d23;
+    color: #cbd5e1;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    font-family: monospace;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.time-tag.closed {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (min-width: 768px) {
+    .container-schedule {
+        max-width: 520px;
+    }
+    .schedule-main-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* ——— ⬆️ BOTÃO VOLTAR AO TOPO ⬆️ ——— */
+.btn-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #03571C;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    
+    /* Inicialmente invisível e com transição suave */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.40s ease-in-out;
+}
+
+/* Estado ativo (quando o usuário rola a tela) */
+.btn-back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.btn-back-to-top:hover {
+    background-color: #024215;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.btn-back-to-top span {
+    font-size: 24px;
+}
+
+/* ——— 📄 RODAPÉ / DIREITOS AUTORAIS 📄 ——— */
+.footer-site {
+    background-color: #f1f3f5; /* Fundo quase branco / cinza bem suave */
+    padding: 24px 16px;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.footer-author-link {
+    color: #03571C; /* Cor verde da paróquia */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-author-link:hover {
+    color: #023812;
+    text-decoration: none;
+}
