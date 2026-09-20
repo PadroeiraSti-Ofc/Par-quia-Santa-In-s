@@ -88,13 +88,21 @@ img, video {
     justify-content: center;
 }
 
+/* ——— 🖼️ DEGRADÊ BRANCO FOCADO NA PARTE INFERIOR DO BANNER 🖼️ ——— */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.70);
+    /* Escuro no topo para dar destaque aos botões e o branco forte bem na base subindo suavemente */
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.65) 0%, 
+        rgba(0, 0, 0, 0.50) 81%, 
+        rgba(248, 249, 250, 0.40) 91%, 
+        rgba(248, 249, 250, 0.98) 100%
+    );
     z-index: 1;
 }
 
