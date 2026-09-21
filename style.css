@@ -681,6 +681,118 @@ img, video {
     }
 }
 
+/* ——— 📍 SEÇÃO LOCALIZAÇÃO 📍 ——— */
+.location-section {
+    background-color: #f8f9fa; /* Fundo claro para contrastar com o bloco escuro anterior */
+    padding: 50px 20px;
+    color: #ffffff;
+}
+
+.location-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.location-title {
+    font-size: 1.8rem;
+    color: #03571C; /* Verde da paróquia */
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.location-subtitle {
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+.location-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.location-info {
+    padding: 24px;
+    text-align: left;
+    color: #333333;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.info-item span {
+    color: #03571C;
+    font-size: 28px;
+    margin-top: 2px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+}
+
+.info-item p {
+    margin: 4px 0 0 0;
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+.btn-maps {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background-color: #03571C;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-maps:hover {
+    background-color: #024215;
+}
+
+.location-map iframe {
+    display: block;
+    width: 100%;
+}
+
+/* Responsivo para telas maiores */
+@media (min-width: 768px) {
+    .location-card {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .location-info {
+        flex: 1;
+        padding: 32px;
+    }
+    
+    .location-map {
+        flex: 1;
+    }
+    
+    .location-map iframe {
+        height: 100%;
+        min-height: 280px;
+    }
+}
+
 /* ——— ⬆️ BOTÃO VOLTAR AO TOPO ⬆️ ——— */
 .btn-back-to-top {
     position: fixed;
