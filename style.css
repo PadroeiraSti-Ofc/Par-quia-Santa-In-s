@@ -748,22 +748,25 @@ img, video {
 }
 
 .btn-maps {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
-    padding: 12px;
-    background-color: #03571C;
-    color: #ffffff !important;
-    text-decoration: none;
+    padding: 14px 18px;
+    background-color: #03571C !important; /* Força a cor de fundo verde */
+    color: #ffffff !important;           /* Força o texto branco */
+    text-decoration: none !important;
     font-weight: 600;
+    font-size: 0.95rem;
     border-radius: 8px;
-    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-maps:hover {
-    background-color: #024215;
+    background-color: #023812 !important;
+    transform: translateY(-2px);
 }
 
 .location-map iframe {
