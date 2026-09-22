@@ -900,7 +900,6 @@ img, video {
 }
 
 html, body {
-  background-color: #03571c; /* Garante que o fundo base do topo seja o verde do site */
   overscroll-behavior-y: none; /* Desativa a mola branca nativa dos navegadores mobile */
 }
 
