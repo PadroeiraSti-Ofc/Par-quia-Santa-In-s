@@ -42,8 +42,9 @@ img, video {
 }
 
 .header-site.scrolled {
-    background-color: rgba(3, 87, 28, 0.50);
-    backdrop-filter: blur(8px);
+  background-color: rgba(3, 87, 28, 0.50); /* 50% de transparência */
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .header-container {
@@ -896,6 +897,11 @@ img, video {
 .footer-author-link:hover {
     color: #023812;
     text-decoration: none;
+}
+
+html, body {
+  background-color: #03571c; /* Garante que o fundo base do topo seja o verde do site */
+  overscroll-behavior-y: none; /* Desativa a mola branca nativa dos navegadores mobile */
 }
 
 /* FIMM DO CÓDIGO */
