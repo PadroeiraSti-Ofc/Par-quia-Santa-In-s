@@ -796,6 +796,40 @@ img, video {
     }
 }
 
+/* ——— 📋 POP-UP DE ENDEREÇO COPIADO (EM LINMA ÚNICA) 📋 ——— */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: #03571C;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;          /* Tamanho levemente ajustado para caber perfeitamente no celular */
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;         /* 👈 IMPEDE QUE A PALAVRA QUEBRE PARA A LINHA DE BAIXO */
+    max-width: 90vw;             /* Garante que não ultrapasse a largura da tela */
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast-notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.toast-notification span {
+    font-size: 18px;
+}
+
 /* ——— ⬆️ BOTÃO VOLTAR AO TOPO ⬆️ ——— */
 .btn-back-to-top {
     position: fixed;
