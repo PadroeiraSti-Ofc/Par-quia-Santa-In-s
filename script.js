@@ -132,4 +132,28 @@ if (btnBackToTop) {
   });
 }
 
+// ——— 📋 LÓGICA DE COPIAR ENDEREÇO COM POP-UP 📋 ———
+const addressText = document.getElementById('addressText');
+const toastNotification = document.getElementById('toastNotification');
+
+if (addressText && toastNotification) {
+  addressText.addEventListener('click', () => {
+    // Texto do endereço a ser copiado
+    const textToCopy = "Av. Luiz Muniz, 1283 - Centro, Santa Inês - MA, 65300-000";
+    
+    // Copia para a área de transferência do usuário
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      // Exibe a notificação flutuante
+      toastNotification.classList.add('show');
+      
+      // Esconde o pop-up após 2.5 segundos
+      setTimeout(() => {
+        toastNotification.classList.remove('show');
+      }, 2500);
+    }).catch(err => {
+      console.error('Erro ao copiar endereço: ', err);
+    });
+  });
+}
+
 console.log("Site Paróquia Santa Inês: Animações e Delay de 1 segundo ativados!");
